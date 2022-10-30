@@ -325,7 +325,7 @@ reset.addEventListener('click',()=>{
    
 })
 //Sound
-const clickSound = new Audio("../sounds/sound-two.mp3")
+const clickSound = new Audio("../puzzle-game/sounds/sound-two.mp3")
 sound.addEventListener('click', () =>{
     sound.querySelector('.sound-on').classList.toggle('sound-off')
 })
