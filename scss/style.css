@@ -152,8 +152,8 @@ body {
 }
 
 .puzzle {
-  width: 500px;
-  height: 500px;
+  width: 475px;
+  height: 475px;
   background-color: #abd699;
   padding: 10px;
   border-radius: 8px;
@@ -305,10 +305,10 @@ body {
 }
 
 .item-place {
-  width: 100px;
-  flex-basis: 110px;
+  width: 105px;
+  flex-basis: 105px;
   display: inline-block;
-  height: 110px;
+  height: 105px;
   background-color: red;
   opacity: 0.5;
   border-radius: 8px;
