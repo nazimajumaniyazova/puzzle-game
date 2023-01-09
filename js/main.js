@@ -1,7 +1,6 @@
 const header = ` <div class="header">
 <div class="container header__wrapper">
     <div class="header__left">
-        <span class="pause">Pause</span>
         <span class="reset">New Game</span>
         <span class="sound">
             <span class="sound-on"></span>
