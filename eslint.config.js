@@ -104,7 +104,12 @@ export default defineConfig([
   },
 
   { files: ['**/*.test.ts'], ...vitest.configs.recommended },
-  { files: ['**/*.js'], extends: [tseslint.disableTypeChecked] },
+  {
+    // Plain JS tool configs cannot carry type annotations.
+    files: ['**/*.js'],
+    extends: [tseslint.disableTypeChecked],
+    rules: { '@typescript-eslint/explicit-module-boundary-types': 'off' },
+  },
   { files: ['*.config.{js,ts}'], rules: { 'import-x/no-default-export': 'off' } },
 
   prettier, // always last
