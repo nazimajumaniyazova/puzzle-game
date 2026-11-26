@@ -1,0 +1,21 @@
+{
+  "name": "puzzle-game",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sliding puzzle game with a proven solvability check",
+  "license": "MIT",
+  "author": "Nazima Jumaniyazova",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "8.3.8"
+  },
+  "packageManager": "pnpm@12.23.0",
+  "engines": {
+    "node": ">=26"
+  }
+}
