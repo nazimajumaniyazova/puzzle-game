@@ -6,5 +6,12 @@
     { "name": "project-words", "path": "./.cspell/project-words.txt", "addWords": true }
   ],
   "dictionaries": ["project-words"],
-  "ignorePaths": ["node_modules", "dist", "coverage", "pnpm-lock.yaml", "public/legacy"]
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "pnpm-lock.yaml",
+    "public/legacy",
+    "CHANGELOG.md"
+  ]
 }
