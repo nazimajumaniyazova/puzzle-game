@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import vitest from '@vitest/eslint-plugin';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import prettier from 'eslint-config-prettier/flat';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
@@ -102,6 +103,7 @@ export default defineConfig([
     },
   },
 
+  { files: ['**/*.test.ts'], ...vitest.configs.recommended },
   { files: ['**/*.js'], extends: [tseslint.disableTypeChecked] },
   { files: ['*.config.{js,ts}'], rules: { 'import-x/no-default-export': 'off' } },
 
