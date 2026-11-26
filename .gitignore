@@ -3,3 +3,6 @@ dist/
 
 .vscode/*
 !.vscode/extensions.json
+
+# Local working notes (not part of the project)
+PLAN*.md

@@ -1,0 +1,11 @@
+{
+  // Tests, e2e and tool configs run in Node (and Playwright's browser context).
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "node_modules/.tmp/tsconfig.test.tsbuildinfo",
+    "lib": ["ES2023", "DOM"],
+    "types": ["node"]
+  },
+  "include": ["src/**/*.test.ts", "src/**/*.bench.ts", "test", "e2e", "*.config.ts"]
+}

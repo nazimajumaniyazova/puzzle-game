@@ -1,0 +1,13 @@
+{
+  // Pure layers. No DOM and no Node types: touching document, window or
+  // setTimeout here is a type error, not a review comment.
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "tsBuildInfoFile": "node_modules/.tmp/tsconfig.core.tsbuildinfo",
+    "lib": ["ES2023"],
+    "types": []
+  },
+  "include": ["src/core", "src/solver"],
+  "exclude": ["src/solver/worker.ts", "src/**/*.test.ts", "src/**/*.bench.ts"]
+}
