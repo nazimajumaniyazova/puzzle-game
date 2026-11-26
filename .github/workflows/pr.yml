@@ -1,0 +1,41 @@
+# Separate from ci.yml so that editing a PR's title or description re-runs
+# only these quick checks, not the whole pipeline.
+name: PR
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  metadata:
+    name: PR title and description
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # The title becomes the squash commit, so it must pass commitlint.
+      # Title and body go through env vars, never interpolated into the script.
+      - name: Title follows Conventional Commits
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: printf '%s\n' "$PR_TITLE" | pnpm exec commitlint --verbose
+      - name: Description has no AI attribution
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if printf '%s' "$PR_BODY" | grep -Eiq 'co-authored-by:[[:space:]]*claude|claude-session:|generated with \[?claude code'; then
+            echo "::error::The PR description contains an AI attribution line. Remove it (see CLAUDE.md)."
+            exit 1
+          fi
