@@ -7,6 +7,7 @@ reports/
 
 .vscode/*
 !.vscode/extensions.json
+.claude/settings.local.json
 
 # Local working notes (not part of the project)
 PLAN*.md
