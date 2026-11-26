@@ -1,0 +1,10 @@
+{
+  // Solution file: each project below has its own lib and types.
+  // tsconfig.worker.json (WebWorker lib) is added with the solver in stage 4.
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.core.json" },
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.test.json" }
+  ]
+}

@@ -1,0 +1,11 @@
+/*
+ * Design tokens. The only file allowed to contain raw colors and spacing;
+ * everything else uses var(--…). Themes are added in stage 3.
+ */
+:root {
+  --color-bg: #252525;
+  --color-text: #199aae;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+}
