@@ -1,0 +1,26 @@
+name: Feature request
+description: Propose a change or a new capability
+labels: ['type: feature']
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What is missing or awkward today, and for whom.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: What should change. Check "Deliberately not doing" in CLAUDE.md first.
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Acceptance criteria
+      value: |
+        - [ ] …
+    validations:
+      required: true
